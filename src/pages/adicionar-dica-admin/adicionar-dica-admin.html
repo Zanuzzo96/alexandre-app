@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Adicionar dica</ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="dicas">
+   <ion-segment-button value="adicionar">
+     Adicionar dicas
+   </ion-segment-button>
+   <ion-segment-button value="listar">
+     Listar dicas
+   </ion-segment-button>
+ </ion-segment>
+
+</ion-header>
+
+
+<ion-content [ngSwitch]="dicas">
+
+
+  <div *ngSwitchCase = "'adicionar'">
+    <ion-card>
+      <ion-card-header>
+        <h2 style="color:#FFF">Titulo</h2>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-input type="text" [(ngModel)]="conteudoDica.titulo" placeholder="Descreva aqui o titulo"></ion-input>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <h2 style="color:#FFF">Dica</h2>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-textarea rows="7" [(ngModel)]="conteudoDica.dica" placeholder="Descreva aqui a dica"></ion-textarea>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <button ion-button full color="amarelo" (click)="adicionarDica()">Adicionar dicas</button>
+    </ion-card>
+
+  </div>
+
+
+  <div *ngSwitchCase = "'listar'">
+    <ion-card color="amarelo" *ngFor="let item of listagemDicas">
+      <img [src]="item.img" alt="">
+      <ion-card-content text-center>
+       <h1>{{ item.titulo}}</h1>
+       <h2>{{item.dica}}</h2><br>
+       <button color="cinza" full ion-button item-end icon-start (click)="excluirDica(item.id)"><ion-icon class="fa fa-trash-o"></ion-icon>Excluir</button>
+      </ion-card-content>
+   </ion-card>
+  </div>
+
+
+</ion-content>

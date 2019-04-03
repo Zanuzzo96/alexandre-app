@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>VALIDAR AULA DADA</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header text-center>
+      <strong>Dados da aula</strong>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon class="fa fa-clock-o" item-start small></ion-icon>
+        <h2>{{data}} - {{hora}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="fa fa-user" item-start small></ion-icon>
+        <h2>{{nome}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="fa fa-paw" item-start small></ion-icon>
+        <h2>{{animal}}</h2>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header text-center>
+      <strong>O que foi ensinado na aula / <br> Atividade de tema de casa</strong>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-textarea rows="7" text-center name="descricao" placeholder="Descreva o que foi ensinado nessa aula e caso tenha ficado alguma atividade para fazer em casa descreva aqui também" [(ngModel)]="aula.conteudoAula"></ion-textarea>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <button ion-button color="amarelo" block (click)="validarAula()">Validar Aula</button>
+  </ion-card>
+</ion-content>

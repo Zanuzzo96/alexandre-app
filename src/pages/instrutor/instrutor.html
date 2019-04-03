@@ -1,0 +1,59 @@
+
+<ion-header>
+  <ion-toolbar color="cinza">
+    <ion-title text-center>Olá {{nome}}<br>
+      <small>Instrutor</small></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="alerta" *ngIf = "dataAula || horaAula ">
+    <h5 text-center>Lembrete da sua proxima aula</h5>
+    <h1 text-center>{{dataAula}} ás {{horaAula}}</h1>
+
+    <h6 text-center (click)="agenda_instrutor()">Visualizar toda agenda</h6>
+  </div>
+  <ion-card color="cinzaFraquinho">
+    <ion-grid>
+      <ion-row>
+
+        <ion-col class="botao" col-6 text-center  (click)="agenda_instrutor()">
+          <ion-icon class="fa fa-calendar"></ion-icon>
+          <span><br>Agenda</span>
+        </ion-col>
+
+        <ion-col class="botao" col-6 text-center  (click)="controle_aulas()">
+          <ion-icon class="fa fa-book"></ion-icon>
+          <span><br>Controle de aulas</span>
+        </ion-col>
+
+        <ion-col class="botao" col-6 text-center  (click)="solicitacoes()">
+          <ion-icon class="fa fa-list-alt"></ion-icon>
+          <span><br>Solicitações</span>
+        </ion-col>
+
+        <ion-col class="botao" col-6 text-center  (click)="perfil()">
+          <ion-icon class="fa fa-user"></ion-icon>
+          <span><br>Perfil</span>
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <span>Solicitações</span>
+    </ion-card-header>
+    <ion-list text-center>
+      <ion-item (click)="solicitacoes()">Confirmação de aula <ion-badge>{{solicitacao}}</ion-badge></ion-item>
+    </ion-list>
+  </ion-card>
+  <br>
+  <ion-card (click)="sair()">
+    <ion-card-header>
+      <span>Sair</span>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,67 @@
+page-usuario{
+
+  ion-card-header{
+    background-color: #c6911d;
+  }
+
+  ion-card-header span{
+    color: #fff;
+  }
+
+  .topo{
+    background-color: #5F6062;
+    color: white;
+    height: 10%;
+  }
+
+  .alerta{
+    margin-top: -20px;
+    padding-top: 16px;
+    background: #C6911D;
+    height: auto;
+
+    h5{
+      color:white;
+      font-size: 16px
+    }
+
+    h1{
+      font-weight: bold;
+      color: white;
+      font-size: 26px;
+      margin-top: -5px;
+    }
+
+    h6{
+      color: white;
+    }
+
+    .botaoReagendar {
+        color:white;
+        border-color: white;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        width: 80%
+    }
+
+  }
+
+  .opcoes{
+    width: 100%;
+    background-color: white;
+    padding-top:5px;
+
+    ion-row{
+      margin-top: 2px;
+      margin-bottom: 2px;
+      color:black;
+    }
+
+    .fa{
+      font-size: 25px;
+      color:#5F6062;
+      margin-bottom: 4px;
+    }
+  }
+}

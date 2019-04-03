@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>COMPRA DE AULA</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <h2 style="color:#FFFFFF"><strong>Dados da solicitação</strong></h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-icon class="fa fa-list" item-start small></ion-icon>
+          <h2>{{dadosSolicitacao.aulas}} aulas</h2>
+        </ion-item>
+        <ion-item>
+          <ion-icon class="fa fa-user" item-start small></ion-icon>
+          <h2>{{dadosSolicitacao.nome}}</h2>
+        </ion-item>
+        <ion-item>
+          <ion-icon class="fa fa-map-marker" item-start small></ion-icon>
+          <h2>{{dadosSolicitacao.endereco}}</h2>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <h2 style="color:#FFFFFF"><strong>Mais informações</strong></h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-card-title>
+          <h3><strong>Necessidade de mudança</strong></h3>
+        </ion-card-title>
+        <p>
+          {{dadosSolicitacao.necessidade}}
+        </p>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-card-title>
+          <h3><strong>Temperamento do animal</strong></h3>
+        </ion-card-title>
+        <p>
+          {{dadosSolicitacao.temperamento}}
+        </p>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-card-title>
+          <h3><strong>Observação</strong></h3>
+        </ion-card-title>
+        <p>
+          {{dadosSolicitacao.observacao}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <h2 style="color:#FFFFFF"><strong>Custo total dessa solicitação</strong></h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>R$</ion-label>
+          <ion-input type="text" [(ngModel)]="dadosSolicitacao.valor"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <button ion-button block color="amarelo" (click)="enviarRetorno()">ENVIAR RETORNO</button>
+      <br>
+      <button ion-button block color="cinza" (click)="excluirSolicitacao()">EXCLUIR ESSA SOLICITAÇÃO</button>
+      <br>
+      <button ion-button block color="amarelo" (click)="definirPaga()">DEFINIR COMO PAGA</button>
+    </ion-card>
+  </div>
+</ion-content>

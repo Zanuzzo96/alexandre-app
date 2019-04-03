@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar color="amarelo">
+    <ion-title>Registre-se</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <h4 text-center>Dados pessoais</h4>
+      <ion-item class="box-login">
+        <ion-label stacked>Nome completo</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.nome"></ion-input>
+      </ion-item>
+
+      <ion-item class="box-login">
+        <ion-label stacked>Cpf</ion-label>
+        <ion-input type="number" [(ngModel)]="usuario.cpf"></ion-input>
+      </ion-item>
+
+      <ion-item class="box-login">
+        <ion-label stacked>Rg</ion-label>
+        <ion-input type="number" [(ngModel)]="usuario.rg"></ion-input>
+      </ion-item>
+
+      <ion-item class="box-login">
+        <ion-label stacked>Data de nascimento</ion-label>
+        <ion-input type="number" [(ngModel)]="usuario.nasc"></ion-input>
+      </ion-item>
+
+      <ion-item class="box-login">
+        <ion-label stacked>Telefone para contato</ion-label>
+        <ion-input type="tel" [(ngModel)]="usuario.contato"></ion-input>
+      </ion-item>
+
+      <ion-item class="box-login">
+          <ion-label stacked>Endereço completo</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.endereco"></ion-input>
+      </ion-item>
+
+      <br>
+
+        <h4 color="verde_forte" text-center>Dados do animal</h4>
+          <ion-item class="box-login">
+            <ion-label stacked>Nome do animal</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.nomeAnimal"></ion-input>
+          </ion-item>
+
+          <ion-item class="box-login">
+            <ion-label stacked>Raça</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.raca"></ion-input>
+          </ion-item>
+
+          <ion-item class="box-login">
+            <ion-label stacked>Sexo</ion-label>
+            <ion-select [(ngModel)]="usuario.sexo">
+              <ion-option value="MACHO">Macho</ion-option>
+              <ion-option value="FÊMEA">Fêmea</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item class="box-login">
+            <ion-label stacked>Idade</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.idade"></ion-input>
+          </ion-item>
+
+          <ion-item class="box-login">
+            <ion-label stacked>Animal é castrado?</ion-label>
+            <ion-select [(ngModel)]="usuario.castrado">
+              <ion-option value="SIM">Sim</ion-option>
+              <ion-option value="NÃO">Não</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <br>
+          <h4 color="verde_forte" text-center>Dados de acesso</h4>
+
+          <ion-item class="box-login">
+            <ion-label stacked>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.login"></ion-input>
+          </ion-item>
+
+          <ion-item class="box-login">
+              <ion-label stacked>Senha</ion-label>
+              <ion-input type="text" [(ngModel)]="usuario.senha"></ion-input>
+          </ion-item>
+
+          <br>
+
+    <div text-center align-items-center>
+      <br>
+      <button class="registro" (click)="adicionarUsuario()" ion-button color="amarelo">Registrar</button>
+
+    </div>
+
+  </ion-list>
+</ion-content>

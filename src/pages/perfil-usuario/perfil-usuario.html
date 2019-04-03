@@ -1,0 +1,111 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="perfil">
+
+  <ion-segment-button value="usuario">
+    Usuário
+  </ion-segment-button>
+
+   <ion-segment-button value="animal">
+     Animal
+   </ion-segment-button>
+
+ </ion-segment>
+</ion-header>
+
+<ion-content [ngSwitch]="perfil">
+
+  <div *ngSwitchCase = "'usuario'" ngSelected="selected" text-center align-items-center>
+    <br>
+        <ion-item class="box-login">
+          <ion-label stacked>NOME COMPLETO</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.nome"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+          <ion-label stacked>CPF</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.cpf"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+          <ion-label stacked>RG</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.rg"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+          <ion-label stacked>DATA DE NASCIMENTO</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.nascimento"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+          <ion-label stacked>CONTATO / TELEFONE</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.contato"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+            <ion-label stacked>ENDEREÇO COMPLETO</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.endereco"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+            <ion-label stacked>LOGIN</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.login"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+            <ion-label stacked>SENHA</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.senha"></ion-input>
+        </ion-item>
+
+        <br>
+        <button ion-button class="botaoPerfil" color="amarelo" (click)="atualizarUsuario()">Atualizar perfil do usuário</button>
+
+  </div>
+
+  <div *ngSwitchCase = "'animal'">
+
+        <div *ngFor="let animal of dadosAnimal"><!-- nesse ponto faz o loop pra listar todos os animais cadastrados-->
+            <ion-item>
+              <ion-label stacked>NOME DO ANIMAL</ion-label>
+              <ion-input type="text" [(ngModel)]="animal.nomeAnimal"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label stacked>RAÇA</ion-label>
+              <ion-input type="text" [(ngModel)]="animal.raca"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label stacked>SEXO</ion-label>
+              <ion-select [(ngModel)]="animal.sexo">
+                <ion-option value="MACHO">MACHO</ion-option>
+                <ion-option value="FÊMEA">FÊMEA</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label stacked>IDADE</ion-label>
+              <ion-input type="text" [(ngModel)]="animal.idade"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label stacked>CASTRADO</ion-label>
+              <ion-select [(ngModel)]="animal.castrado">
+                <ion-option value="SIM">SIM</ion-option>
+                <ion-option value="NÃO">NÃO</ion-option>
+              </ion-select>
+            </ion-item>
+            <br><br>
+
+            <button ion-button class="botaoPerfil" color="amarelo" (click)="atualizarAnimal(animal.id,animal.nomeAnimal,animal.raca,animal.sexo,animal.idade,animal.castrado)">Atualizar perfil do animal</button>
+
+        </div>
+    <br>
+    <button ion-button outline class="botaoPerfil" color="amarelo" (click)="adicionarAnimal()">Adicionar mais um animal</button>
+    <br>
+
+  </div>
+</ion-content>

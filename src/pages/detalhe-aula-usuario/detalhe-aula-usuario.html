@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Detalhe da Aula</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card color="amarelo">
+    <ion-card-header>
+      <h2 style="color:#FFFFFF">Dados da aula</h2>
+    </ion-card-header>
+
+      <ion-list>
+        <ion-item><ion-icon class="fa fa-calendar"></ion-icon> {{detalheAula.data}} </ion-item>
+        <ion-item><ion-icon class="fa fa-clock-o"></ion-icon> {{detalheAula.hora}} </ion-item>
+        <ion-item><ion-icon class="fa fa-paw"></ion-icon> {{detalheAula.animal}} </ion-item>
+        <ion-item><ion-icon class="fa fa-check-square-o"></ion-icon> {{detalheAula.status}} </ion-item>
+      </ion-list>
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <h2 style="color:#FFFFFF">Conteudo da aula</h2>
+    </ion-card-header>
+
+    <ion-card-content>
+      <br>
+      <h2>
+        {{detalheAula.conteudo}}
+      </h2>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

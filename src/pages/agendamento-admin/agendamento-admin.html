@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="cinza">
+    <ion-title>Agendamento</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let agendamento of agendamento">
+    <ion-card-header>
+      <h1 text-center style="color:#fff">{{agendamento.data_aula}} - {{agendamento.hora_aula}}</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item-group>
+        <ion-item>Usuário: <strong>{{agendamento.nome}}</strong></ion-item>
+        <ion-item>Animal: <strong>{{agendamento.nomeAnimal}}</strong></ion-item>
+        <ion-item>Endereço: <strong class="endereco">{{agendamento.endereco}}</strong></ion-item>
+      </ion-item-group>
+    </ion-card-content>
+
+    <button ion-button full color="amarelo" (click)="confirmarAula(agendamento.id)">Confirmar aula</button>
+  </ion-card>
+</ion-content>

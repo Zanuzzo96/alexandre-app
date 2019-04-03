@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Adicionar instrutor</ion-title>
+  </ion-navbar>
+
+  <ion-segment [(ngModel)]="instrutores">
+   <ion-segment-button value="adicionar">
+     Adicionar instrutor
+   </ion-segment-button>
+   <ion-segment-button value="listar">
+     Listar Instrutor
+   </ion-segment-button>
+ </ion-segment>
+
+</ion-header>
+
+
+<ion-content [ngSwitch]="instrutores">
+  <div *ngSwitchCase = "'adicionar'">
+    <ion-list>
+      <br>
+        <ion-item class="box-login">
+          <ion-label stacked>Nome completo</ion-label>
+          <ion-input type="text" [(ngModel)]="instrutor.nome"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+          <ion-label stacked>Cpf</ion-label>
+          <ion-input type="text" [(ngModel)]="instrutor.cpf"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+          <ion-label stacked>Rg</ion-label>
+          <ion-input type="text" [(ngModel)]="instrutor.rg"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+          <ion-label stacked>Data de nascimento</ion-label>
+          <ion-input type="text" [(ngModel)]="instrutor.nasc"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+          <ion-label stacked>Telefone para contato</ion-label>
+          <ion-input type="text" [(ngModel)]="instrutor.contato"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+            <ion-label stacked>Endereço completo</ion-label>
+            <ion-input type="text" [(ngModel)]="instrutor.endereco"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+            <ion-label stacked>Login</ion-label>
+            <ion-input type="text" [(ngModel)]="instrutor.login"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+            <ion-label stacked>Senha</ion-label>
+            <ion-input type="text" [(ngModel)]="instrutor.senha"></ion-input>
+        </ion-item>
+        <div text-center align-items-center>
+          <br>
+          <button class="registro" ion-button color="cinza" (click)="adicionarInstrutor()">Adicionar instrutor</button>
+        </div>
+      </ion-list>
+  </div>
+
+  <div *ngSwitchCase = "'listar'"><br>
+    <ion-list>
+      <ion-item *ngFor="let item of listarInstrutores" (click)="opcoes()">
+        {{item.nome}}
+        <ion-icon name="ios-add" item-end small></ion-icon>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+</ion-content>

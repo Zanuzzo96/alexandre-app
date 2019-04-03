@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Solicitação de mais aulas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let compra of compra">
+    <ion-card-content>
+      <ion-item text-center>
+        <span>Quantidade de aulas Solicitadas:</span>
+        <h1><strong>{{compra.qtd_aulas}} aulas</strong></h1>
+      </ion-item>
+      <ion-item text-center>
+        <span>Valor das {{compra.qtd_aulas}} aulas:</span>
+        <h1><strong>{{compra.valor_orcado}}</strong></h1>
+      </ion-item>
+
+      <button ion-button block color="amarelo" (click)="concluirCompra(compra.valor_orcado,compra.qtd_aulas)">Concluir compra da aula</button>
+      <br>
+      <button ion-button block color="cinza" (click)="cancelaCompra(compra.id)">Cancelar compra da aula</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

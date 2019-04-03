@@ -1,0 +1,35 @@
+page-home {
+  background-color: white;
+
+  .imagem-logo{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  .box-login{
+    width: 80%;
+    margin-left: 7%
+  }
+
+  button {
+    width:80%
+  }
+
+  .botaoRegistro {
+    margin-top: 25px
+  }
+
+  ion-footer{
+    background:inherit;
+
+    h5{
+      font-size:12px;
+      color: #5f6062
+    }
+  }
+
+}

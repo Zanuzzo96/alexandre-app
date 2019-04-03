@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Listar Aulas</ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="opcoes">
+
+  <ion-segment-button value="concluida">
+    Lista de Aulas
+  </ion-segment-button>
+
+   <ion-segment-button value="pendente">
+     Pendentes
+   </ion-segment-button>
+
+ </ion-segment>
+</ion-header>
+
+<ion-content [ngSwitch]="opcoes">
+
+  <div *ngSwitchCase = "'pendente'" text-center align-items-center>
+    <ion-item>
+      <ion-row >
+        <ion-col text-center class="txt">
+          Você tem {{quantidade}} aula pendente
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf = "quantidade > 0">
+        <button ion-button color="amarelo" full (click)="agendarAulaPendente()">Solicitar agendamento<br>de aula pendente</button>
+      </ion-row>
+      <ion-row *ngIf = "quantidade == 0">
+        <button ion-button color="amarelo" full (click)="solicitarMaisAulas()">Solicitar mais aulas</button>
+      </ion-row>
+    </ion-item>
+  </div>
+  <!-- colocar um infiniteScroll para listar as aulas já dadas-->
+  <ion-list *ngSwitchCase = "'concluida'">
+
+    <ion-item *ngFor="let aula of aulasConcluidas">
+
+        <ion-row>
+          <ion-col><ion-icon class="fa fa-calendar"></ion-icon><span> {{aula.data}} </span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-icon class="fa fa-clock-o"></ion-icon><span> {{aula.hora}} </span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-icon class="fa fa-paw"></ion-icon><span> {{aula.nomeAnimal}} </span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col *ngIf = "aula.status == 'concluida'" ><ion-icon class="fa fa-check-square-o"></ion-icon><span>{{aula.status}}</span></ion-col>
+          <ion-col *ngIf = "aula.status == 'pendente'"><ion-icon class="fa fa-minus-square-o"></ion-icon><span>Aguardando confirmação</span></ion-col>
+        </ion-row>
+        <ion-row *ngIf = "aula.status == 'concluida'">
+          <ion-col><button ion-button full color="amarelo" (click)="detalheAula(aula.id, aula.data, aula.hora, aula.nomeAnimal, aula.status, aula.conteudo_aula, nome, id)"> Ver detalhes da aula</button></ion-col>
+        </ion-row>
+
+    </ion-item>
+
+  </ion-list>
+</ion-content>

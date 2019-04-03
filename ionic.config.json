@@ -1,0 +1,8 @@
+{
+  "name": "smartdog_app",
+  "app_id": "app.smartdog.felipezanuzzo",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

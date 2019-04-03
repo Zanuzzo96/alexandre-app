@@ -1,0 +1,112 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  verde_forte: #6E6F42,
+  verde_fraco: #C1BB7D,
+  laranja: #EC8528,
+
+  cinza:#5F6062,
+  cinzaFraco:#afafb0,
+  cinzaFraquinho:#e5e5e5,
+
+  amarelo:#C6911D,
+  amareloFraco:#dcbd77,
+  amareloFraquinho: #D7B260,
+);
+$text-input-highlight-color-valid:#C6911D;
+
+$searchbar-ios-background-color: #C6911D;
+$searchbar-ios-border-color: #C6911D;
+$segment-button-ios-border-radius: 0px;
+$segment-button-ios-background-color-activated: #C6911D;
+$range-ios-bar-background-color: #5F6062;
+$range-ios-bar-active-background-color: blue;
+$range-ios-knob-background-color: #C6911D;
+$range-ios-bar-active-background-color: #C6911D;
+$text-input-ios-highlight-color:#C6911D;
+$text-input-ios-background-color:#C6911D;
+$text-input-ios-show-focus-highlight:#C6911D;
+$text-input-ios-show-valid-highlight:#C6911D;
+$text-input-ios-show-focus-highlight:#C6911D;
+$badge-ios-background-color:#C6911D;
+
+$segment-button-md-text-color-activated: #C6911D;
+$segment-button-md-border-bottom-color: #FFFFFF;
+$segment-button-md-border-color-activated: #C6911D;
+$segment-button-md-font-size:10px;
+$searchbar-md-background-color: #C6911D;
+$label-md-text-color-focused: #C6911D;
+$text-input-md-highlight-color: #C6911D;
+$range-md-bar-background-color:#5F6062;
+$range-md-bar-active-background-color: #C6911D;
+$badge-md-background-color:#C6911D;
+
+$text-input-wp-border-width:1px;
+$text-input-wp-highlight-color:#C6911D;
+$text-input-wp-background-color:#C6911D;
+$select-wp-border-width:1px;
+$datetime-wp-border-width:1px;
+$segment-button-wp-buttons-justify-content: center;
+$segment-button-wp-text-color-activated: #C6911D;
+$searchbar-wp-background-color:#5F6062;
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";

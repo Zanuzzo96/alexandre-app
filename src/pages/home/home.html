@@ -1,0 +1,28 @@
+<ion-content>
+    <ion-list>
+
+        <img src="http://smartdogtraining.com.br/assets/img/aplicativo/smart.png" class="imagem-logo">
+
+        <ion-item class="box-login">
+          <ion-label stacked>Email</ion-label>
+          <ion-input type="text" [(ngModel)]="login.usuario"></ion-input>
+        </ion-item>
+
+        <ion-item class="box-login">
+            <ion-label stacked>Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="login.senha"></ion-input>
+        </ion-item>
+
+      <div text-center align-items-center>
+        <br>
+        <button ion-button color="amarelo" (click)="entrar()">ENTRAR</button>
+
+        <button ion-button color="amarelo" outline class="botaoRegistro" (click)="abrirRegistro()">Usuário novo? Registre-se</button>
+
+      </div>
+
+    </ion-list>
+</ion-content>
+<ion-footer no-border>
+  <h5 text-center>Desenvolvido por Felipe Zanuzzo</h5>
+</ion-footer>

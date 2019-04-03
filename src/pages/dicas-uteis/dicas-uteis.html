@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Dicas Úteis</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+     <ion-card color="amarelo" *ngFor="let item of dicas">
+      <ion-card-header text-center>
+        <h1 text-center>{{ item.titulo}}</h1>
+      </ion-card-header>
+      <ion-card-content>
+        <h2 text-center>{{item.dica}}</h2>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

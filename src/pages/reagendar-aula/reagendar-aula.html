@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Reagendar aula</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card color="amarelo">
+    <ion-card-content text-center>
+      Você irá reagendar a aula do dia 22/05/18
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <br>
+    <h3 text-center><strong>Solicitar reagendamento de aula</strong></h3>
+    <br>
+    <ion-item>
+      <ion-label>Selecione o dia</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Selecione a hora</ion-label>
+      <ion-datetime displayFormat="HH:mm"></ion-datetime>
+    </ion-item>
+    
+  </ion-card>
+
+  <button ion-button full color="amarelo" class="botao_agendamento" (click)="solicitarAgendamento()">SOLICITAR REAGENDAMENTO DE AULA</button>
+</ion-content>

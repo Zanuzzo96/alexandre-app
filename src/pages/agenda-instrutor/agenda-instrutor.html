@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Agenda</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let agenda of agenda">
+    <ion-card-content>
+      <ion-item>
+        <ion-icon class="fa fa-clock-o" item-start small></ion-icon>
+        <h2>{{agenda.data}} - {{agenda.hora}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="fa fa-user" item-start small></ion-icon>
+        <h2>{{agenda.nome}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="fa fa-paw" item-start small></ion-icon>
+        <h2>{{agenda.nomeAnimal}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="fa fa-map-marker" item-start small></ion-icon>
+        <h2>{{agenda.endereco}}</h2>
+      </ion-item>
+      <br>
+      <button ion-button color="amarelo" block (click)="validarAula(agenda.id,  agenda.data,  agenda.hora, agenda.nome, agenda.nomeAnimal)">Validar como aula dada</button>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

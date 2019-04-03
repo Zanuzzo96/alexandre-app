@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Solicitações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<div>
+  <ion-card *ngFor="let notificacao of notificacao">
+    <ion-card-content>
+            <ion-item>
+              <ion-icon class="fa fa-clock-o" item-start small></ion-icon>
+              <h2>{{notificacao.data_aula}} - {{notificacao.hora_aula}}</h2>
+            </ion-item>
+            <ion-item>
+              <ion-icon class="fa fa-user" item-start small></ion-icon>
+              <h2>{{notificacao.nome}}</h2>
+            </ion-item>
+            <ion-item>
+              <ion-icon class="fa fa-paw" item-start small></ion-icon>
+              <h2>{{notificacao.nomeAnimal}}</h2>
+            </ion-item>
+            <ion-item>
+              <ion-icon class="fa fa-map-marker" item-start small></ion-icon>
+              <h2>{{notificacao.endereco}}</h2>
+            </ion-item>
+
+            <button ion-button block color="amarelo" (click)="confirmarAula(notificacao.id)">CONFIRMAR QUE DAREI ESSA AULA</button>
+            <br>
+    </ion-card-content>
+  </ion-card>
+</div>
+</ion-content>

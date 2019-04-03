@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="cinza">
+      <ion-title>Agendar Aula</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="agendamento">
+    <ion-card color="amarelo">
+      <ion-card-content text-center>
+          Você tem {{quantidade}} aula ainda pendente para agendamento
+      </ion-card-content>
+    </ion-card>
+    <div *ngIf = "quantidade >= 1" >
+      <h4>Solicitação de agendamento de aula*</h4>
+
+      <ion-item>
+        <ion-label>Selecione o dia</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="agendamento.dia"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Selecione a hora</ion-label>
+        <ion-datetime displayFormat="HH:mm" [(ngModel)]="agendamento.hora"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Selecione o animal</ion-label>
+        <ion-select [(ngModel)]="agendamento.animal">
+          <ion-option  *ngFor="let animal of animal" value="{{animal.id}}"  selected="true">{{animal.nomeAnimal}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <button ion-button color="amarelo" class="botao_agendamento" (click)="solicitarAgendamento()">SOLICITAR AGENDAMENTO DE AULA</button>
+
+      <h6>* Sua aula deverá ser confirmada o agendamento pelo instrutor e você receberá a notificação do agendamento</h6>
+    </div>
+    <div *ngIf = "quantidade == 0" >
+      <button ion-button color="amarelo" class="botao_agendamento" (click)="solicitarAulas()">SOLICITAR MAIS AULAS</button>
+    </div>
+
+  </div>
+</ion-content>

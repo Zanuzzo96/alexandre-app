@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Compra de aulas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor = "let solicitacao of listaSolicitacao" >
+    <ion-card-content>
+      <ion-item>
+        <ion-icon class="fa fa-list" item-start small></ion-icon>
+        <h2>{{solicitacao.qtd_aulas}} aulas</h2>
+      </ion-item>
+      <ion-item>
+        <ion-icon class="fa fa-user" item-start small></ion-icon>
+        <h2>{{solicitacao.nome}}</h2>
+      </ion-item>
+      <button ion-button block color="amarelo" (click)="detalheSolicitacao(solicitacao.id,solicitacao.id_user)">Ver solicitação</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Adicionar um novo animal</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label stacked>NOME DO ANIMAL</ion-label>
+    <ion-input type="text" [(ngModel)]="animal.nomeAnimal" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>RAÇA</ion-label>
+    <ion-input type="text" [(ngModel)]="animal.raca"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>SEXO</ion-label>
+    <ion-select [(ngModel)]="animal.sexo">
+      <ion-option value="MACHO">MACHO</ion-option>
+      <ion-option value="FÊMEA">FÊMEA</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>IDADE</ion-label>
+    <ion-input type="text" [(ngModel)]="animal.idade"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>CASTRADO</ion-label>
+    <ion-select [(ngModel)]="animal.castrado">
+      <ion-option value="SIM">SIM</ion-option>
+      <ion-option value="NÃO">NÃO</ion-option>
+    </ion-select>
+  </ion-item>
+  <br><br>
+
+  <button ion-button full color="amarelo" (click)="adicionarAnimal()">Adicionar animal</button>
+  <br>
+  <button ion-button full color="cinza" (click)="voltar()">Cancelar</button>
+
+</ion-content>

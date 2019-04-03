@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="cinza">
+    <ion-title text-center>Olá {{nome}}<br>
+      <small>Administração</small></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="alerta" *ngIf = "dataAula || horaAula ">
+    <h5 text-center>Lembrete da sua proxima aula</h5>
+    <h1 text-center>{{dataAula}} ás {{horaAula}}</h1>
+
+    <h6 text-center (click)="verAgenda()">Visualizar toda agenda</h6>
+  </div>
+  <ion-card color="cinzaFraquinho">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 text-center  (click)="agenda_instrutor()">
+          <ion-icon class="fa fa-calendar"></ion-icon>
+          <span><br>Minha agenda</span>
+        </ion-col>
+        <ion-col col-4 text-center  (click)="controle_aulas()">
+          <ion-icon class="fa fa-book"></ion-icon>
+          <span><br>Controle de aulas</span>
+        </ion-col>
+        <ion-col col-4 text-center  (click)="adicionar_dica()">
+          <ion-icon class="fa fa-lightbulb-o"></ion-icon>
+          <span><br>Dicas</span>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 text-center (click)="adicionar_instrutor()">
+          <ion-icon class="fa fa-user-plus"></ion-icon>
+          <span><br>Instrutor</span>
+        </ion-col>
+        <ion-col col-4 text-center (click)="listar_usuarios()">
+          <ion-icon class="fa fa-list-ul"></ion-icon>
+          <span><br>Listar usuários</span>
+        </ion-col>
+        <ion-col col-4 text-center  (click)="sair()">
+          <ion-icon class="fa fa-sign-out"></ion-icon>
+          <span><br>Sair</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <span>Solicitações</span>
+    </ion-card-header>
+
+      <ion-list>
+        <ion-item (click)="solicitacaoAgendamento()">Solicitação de agendamento <ion-badge>{{notificacaoAgendamento}}</ion-badge></ion-item>
+        <ion-item (click)="solicitacaoCompraAula()">Solicitação de compra de aula <ion-badge>{{notificacaoCompra}}</ion-badge></ion-item>
+      </ion-list>
+
+  </ion-card>
+
+</ion-content>

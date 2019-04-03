@@ -1,0 +1,48 @@
+
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Solicitar mais aulas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-item text-center>
+      <h3>Quantas aulas você necessita</h3>
+  </ion-item>
+
+  <ion-item>
+     <ion-range min="1" max="10" pin="true" step="1" snaps="true" color="amarelo" [(ngModel)]="solicitacao.qtdAula">
+         <ion-label range-left>1</ion-label>
+         <ion-label range-right>10</ion-label>
+     </ion-range>
+  </ion-item>
+
+  <ion-item text-center>
+      <h3>Necessidade de mudança</h3>
+  </ion-item>
+
+  <ion-item text-center>
+      <ion-textarea text-center name="descricao" placeholder="Descreva aqui o que deseja ensinar ou corrigir no seu animal" [(ngModel)]="solicitacao.mudanca"></ion-textarea>
+  </ion-item>
+
+  <ion-item text-center>
+      <h3>Temperamento do animal</h3>
+  </ion-item>
+
+  <ion-item text-center>
+      <ion-textarea text-center name="descricao" placeholder="Descreva aqui o temperamento do seu animal" [(ngModel)]="solicitacao.temperamentoAnimal"></ion-textarea>
+  </ion-item>
+
+  <ion-item text-center>
+      <h3>Observação</h3>
+  </ion-item>
+
+  <ion-item text-center>
+      <ion-textarea text-center name="descricaoo" placeholder="Observação" [(ngModel)]="solicitacao.observacao"></ion-textarea>
+  </ion-item>
+
+    <button ion-button class="botaoSolicitar" color="amarelo" (click)="solicitarAulas()">Solicitar</button>
+
+  </ion-content>

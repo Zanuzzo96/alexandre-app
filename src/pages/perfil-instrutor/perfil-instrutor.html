@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="cinza">
+    <ion-title>Perfil do instrutor</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item class="box-login">
+    <ion-label stacked>Nome completo</ion-label>
+    <ion-input type="text" [(ngModel)]="instrutor.nome"></ion-input>
+  </ion-item>
+
+  <ion-item class="box-login">
+    <ion-label stacked>Cpf</ion-label>
+    <ion-input type="text" [(ngModel)]="instrutor.cpf"></ion-input>
+  </ion-item>
+
+  <ion-item class="box-login">
+    <ion-label stacked>Rg</ion-label>
+    <ion-input type="text" [(ngModel)]="instrutor.rg"></ion-input>
+  </ion-item>
+
+  <ion-item class="box-login">
+    <ion-label stacked>Data de nascimento</ion-label>
+    <ion-input type="text" [(ngModel)]="instrutor.nasc"></ion-input>
+  </ion-item>
+
+  <ion-item class="box-login">
+    <ion-label stacked>Telefone para contato</ion-label>
+    <ion-input type="text" [(ngModel)]="instrutor.contato"></ion-input>
+  </ion-item>
+
+  <ion-item class="box-login">
+      <ion-label stacked>Endereço completo</ion-label>
+      <ion-input type="text" [(ngModel)]="instrutor.endereco"></ion-input>
+  </ion-item>
+
+  <ion-item class="box-login">
+      <ion-label stacked>Login</ion-label>
+      <ion-input type="text" [(ngModel)]="instrutor.login"></ion-input>
+  </ion-item>
+
+  <ion-item class="box-login">
+      <ion-label stacked>Senha</ion-label>
+      <ion-input type="text" [(ngModel)]="instrutor.senha"></ion-input>
+  </ion-item>
+  <br>
+
+  <button ion-button full color="amarelo" (click)="atualizarInstrutor()">Atualizar perfil</button>
+
+</ion-content>
